@@ -9,13 +9,14 @@ interface AppProps {}
 
 export const App: FC<AppProps> = ({}) => {
   return (
-    <div className="App">
+    <div className="app">
       <Routes>
         <Route element={<Layout />}>
           <Route element={<PrivateRoute />}>
             <Route path="/" element={<HomePage />} />
           </Route>
           <Route path="/login" element={<AuthRoot />} />
+          <Route path="/register" element={<AuthRoot />} />
         </Route>
       </Routes>
     </div>
