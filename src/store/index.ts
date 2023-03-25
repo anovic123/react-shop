@@ -11,9 +11,11 @@ import {
   REGISTER,
 } from 'redux-persist';
 import authSlice from './slice/auth';
+import productsSlice from './slice/products';
 
 const rootReducer = combineReducers({
   auth: authSlice,
+  products: productsSlice,
 });
 
 const persistConfig = {

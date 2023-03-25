@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillSetting } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
@@ -9,18 +9,19 @@ import s from './style.module.scss';
 
 interface UserProps {}
 
+type PopupClick = MouseEvent & {
+  path: Node[];
+};
+
 export const User: FC<UserProps> = ({}) => {
   const [visible, setVisible] = useState<boolean>(false);
 
   const user = useAppSelector((state) => state?.auth?.user);
-  // console.log('🚀 ~ file: index.tsx:8 ~ user:', user);
-
-  const setVisibleHandler = () => setVisible(!visible);
 
   return (
     <div className={s.user}>
       <div className={s.avatar} style={{ backgroundImage: `url(${user.avatar})` }} />
-      <div className={s.username} onClick={setVisibleHandler}>
+      <div className={s.username} onClick={() => setVisible(!visible)}>
         {user.name}
       </div>
       <div className={s.userMenu} style={{ display: visible ? 'block' : 'none' }}>
@@ -29,13 +30,13 @@ export const User: FC<UserProps> = ({}) => {
           <li>
             <Link to="/settings">
               <AiFillSetting />
-              <span>Настройки</span>
+              <span>Settings</span>
             </Link>
           </li>
           <li>
             <Link to="/login">
               <FiLogOut />
-              <span>Выйти</span>
+              <span>Exit</span>
             </Link>
           </li>
         </ul>

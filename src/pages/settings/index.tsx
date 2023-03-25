@@ -11,7 +11,6 @@ export const SettingsPage: FC<SettingsPageProps> = ({}) => {
   const dispatch = useAppDispatch();
 
   const user = useAppSelector((state) => state.auth.user);
-  // console.log('🚀 ~ file: index.tsx:12 ~ user:', user);
 
   const [data, setData] = useState({
     email: '',
@@ -19,7 +18,6 @@ export const SettingsPage: FC<SettingsPageProps> = ({}) => {
     password: '',
     avatar: '',
   });
-  // console.log('🚀 ~ file: index.tsx:23 ~ data:', data);
 
   useEffect(() => {
     if (!user) return;
