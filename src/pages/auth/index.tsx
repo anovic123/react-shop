@@ -50,7 +50,7 @@ export const AuthRoot: FC = ({}) => {
         } catch (error) {
           return error;
         }
-      } else {
+      } else { 
         alert('Пароли не совпадают')
         throw new Error(AppErrors.PasswordDoNotMatch);
       }

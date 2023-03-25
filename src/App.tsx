@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout';
 import { AuthRoot } from './pages/auth';
 import { HomePage } from './pages/home';
+import { SettingsPage } from './pages/settings';
 import { PrivateRoute } from './utils/router/privateRoute';
 
 interface AppProps {}
@@ -14,6 +15,7 @@ export const App: FC<AppProps> = ({}) => {
         <Route element={<Layout />}>
           <Route element={<PrivateRoute />}>
             <Route path="/" element={<HomePage />} />
+            <Route path="/settings" element={<SettingsPage />} />
           </Route>
           <Route path="/login" element={<AuthRoot />} />
           <Route path="/register" element={<AuthRoot />} />

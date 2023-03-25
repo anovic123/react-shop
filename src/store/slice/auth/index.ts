@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IAuthState, IPublicUser } from "../../../common/types/auth";
-import { loginUser, registerUser } from "../../thunks/auth";
+import { loginUser, registerUser, updateUserInfo } from "../../thunks/auth";
 
 const initialState: IAuthState = {
   user: {} as IPublicUser,
@@ -38,6 +38,9 @@ export const authSlice = createSlice({
     builder.addCase(registerUser.rejected, (state, action) => {
       state.isLoading = false;
       state.isLogged = false;
+    }),
+    builder.addCase(updateUserInfo.fulfilled, (state, action) => {
+      state.user = action.payload;
     })
   }
 })

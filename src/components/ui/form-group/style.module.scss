@@ -1,0 +1,42 @@
+.formGroup {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+
+  .label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+
+  .input {
+    width: 100%;
+    border: none;
+    border-bottom: 0.0625rem solid #ccc;
+    font-size: 20px;
+    padding: 25px 0 0 0;
+
+    &:focus,
+    &:valid {
+      outline: none;
+      border-color: #2ecc71;
+    }
+
+    &:focus + .label,
+    &:valid + .label {
+      top: -1.25rem;
+      font-size: 0.875rem;
+      color: #2ecc71;
+    }
+  }
+
+  .error {
+    color: red;
+    margin-top: 5px;
+  }
+}

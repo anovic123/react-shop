@@ -43,3 +43,19 @@ export const loginUser = createAsyncThunk(
     }
   }
 )
+
+export const updateUserInfo = createAsyncThunk(
+  'auth/updateUser',
+  async (data: any, { rejectWithValue }) => {
+    try {
+      const res = await axios.put(`${BASE_URL}/users/${data.id}`, data);
+      return res.data;
+    } catch (error: any) {
+      if (error.response && error.response.data.message) {
+        return rejectWithValue(error.response.data.message)
+      } else {
+        return rejectWithValue(error.message);
+      }
+    } 
+  }
+)

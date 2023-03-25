@@ -13,7 +13,7 @@ export const User: FC<UserProps> = ({}) => {
   const [visible, setVisible] = useState<boolean>(false);
 
   const user = useAppSelector((state) => state?.auth?.user);
-  console.log('🚀 ~ file: index.tsx:8 ~ user:', user);
+  // console.log('🚀 ~ file: index.tsx:8 ~ user:', user);
 
   const setVisibleHandler = () => setVisible(!visible);
 
