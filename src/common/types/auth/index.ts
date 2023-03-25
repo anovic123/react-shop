@@ -8,3 +8,32 @@ export interface IAuth<
     register: UseFormRegister<TFieldValues>
     errors: any;
 }
+
+export interface IAuthState {
+    user: IPublicUser;
+    isLogged: boolean;
+    isLoading: boolean;
+}
+
+export interface IPublicUser {
+    id: number;
+    email: string;
+    password: string;
+    name: string;
+    role: string;
+    avatar: string;
+    creationAt: string;
+    updatedAt: string;
+}
+
+export interface ILoginData {
+    email: string;
+    password: string;
+}
+
+export interface IRegisterData {
+    email: string;
+    name: string;
+    password: string;
+    avatar: string;
+}

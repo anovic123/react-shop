@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { Header } from './header';
 
 export const Layout: FC = () => {
   const location = useLocation();
@@ -11,12 +12,12 @@ export const Layout: FC = () => {
           <Outlet />
         </>
       ) : (
-        <div>
-          Header
+        <>
+          <Header />
           <div>
             <Outlet />
           </div>
-        </div>
+        </>
       )}
     </>
   );

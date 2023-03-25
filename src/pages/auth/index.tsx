@@ -12,6 +12,8 @@ import { Register } from './register';
 import { loginUser, registerUser } from '../../store/thunks/auth';
 
 import s from './style.module.scss';
+import { ILoginData, IRegisterData } from '../../common/types/auth';
+import { AppErrors } from '../../common/errors';
 
 export const AuthRoot: FC = ({}) => {
   const location = useLocation();
@@ -35,17 +37,22 @@ export const AuthRoot: FC = ({}) => {
         return error;
       }
     } else {
-      const userData = {
-        email: data.email,
-        name: data.name,
-        password: data.password,
-        avatar: data.avatar,
-      };
-      try {
-        await dispatch(registerUser(userData));
-        navigate('/login');
-      } catch (error) {
-        return error;
+      if (data.password === data.confirmPassword) {
+        const userData = {
+          email: data.email,
+          name: data.name,
+          password: data.password,
+          avatar: data.avatar,
+        };
+        try {
+          await dispatch(registerUser(userData));
+          navigate('/login');
+        } catch (error) {
+          return error;
+        }
+      } else {
+        alert('Пароли не совпадают')
+        throw new Error(AppErrors.PasswordDoNotMatch);
       }
     }
   };

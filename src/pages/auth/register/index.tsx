@@ -30,6 +30,18 @@ export const Register: FC<any> = ({ errors, register, navigate }) => {
         {errors && <div className={s.error}>{errors.name?.password}</div>}
       </div>
       <div className={s.formGroup}>
+        <label htmlFor="password" className={s.label}>
+          Повторите ваш пароль
+        </label>
+        <input
+          type="password"
+          name="password"
+          className={s.input}
+          {...register('confirmPassword')}
+        />
+        {errors && <div className={s.error}>{errors.name?.password}</div>}
+      </div>
+      <div className={s.formGroup}>
         <label htmlFor="avatar" className={s.label}>
           Аватар
         </label>

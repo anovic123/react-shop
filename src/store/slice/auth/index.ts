@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IAuthState, IPublicUser } from "../../../common/types/auth";
 import { loginUser, registerUser } from "../../thunks/auth";
 
-const initialState: any = {
-  user: {
-    avatar: "",
-    email: "",
-  },
+const initialState: IAuthState = {
+  user: {} as IPublicUser,
   isLogged: false,
   isLoading: false,
 }
