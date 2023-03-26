@@ -6,26 +6,26 @@ export const navMenu = [
   {
     name: 'Clothes',
     icon: <GiClothes />,
-    id: '1q3a'
+    id: '1q3a',
   },
   {
     name: 'Electronics',
     icon: <MdOutlineElectricBolt />,
-    id: '1q3a'
+    id: '1qaa',
   },
   {
     name: 'Furniture',
     icon: <TbSofa />,
-    id: '1q3a'
+    id: 'b123',
   },
   {
     name: 'Shoes',
     icon: <GiBallerinaShoes />,
-    id: '1q3a'
+    id: 'ds3a',
   },
   {
     name: 'Others',
     icon: <MdOutlineAutoAwesome />,
-    id: '1q3a'
+    id: '1qw2a',
   },
-]
+];

@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+
+import { Footer } from './footer';
 import { Header } from './header';
 
 export const Layout: FC = () => {
@@ -17,6 +19,7 @@ export const Layout: FC = () => {
           <div className="content">
             <Outlet />
           </div>
+          <Footer />
         </>
       )}
     </>

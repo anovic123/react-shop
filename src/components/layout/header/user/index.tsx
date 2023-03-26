@@ -9,22 +9,33 @@ import s from './style.module.scss';
 
 interface UserProps {}
 
-type PopupClick = MouseEvent & {
-  path: Node[];
-};
-
 export const User: FC<UserProps> = ({}) => {
   const [visible, setVisible] = useState<boolean>(false);
+  const userMenuRef = useRef<HTMLDivElement>(null);
 
   const user = useAppSelector((state) => state?.auth?.user);
 
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
+        setVisible(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    }
+  }, [userMenuRef])
+s
   return (
     <div className={s.user}>
       <div className={s.avatar} style={{ backgroundImage: `url(${user.avatar})` }} />
       <div className={s.username} onClick={() => setVisible(!visible)}>
         {user.name}
       </div>
-      <div className={s.userMenu} style={{ display: visible ? 'block' : 'none' }}>
+      <div className={s.userMenu} ref={userMenuRef} style={{ display: visible ? 'block' : 'none' }}>
         <div className={s.userMenuEmail}>{user.email}</div>
         <ul className={s.userMenuList}>
           <li>

@@ -26,6 +26,8 @@ export const HomePage: FC<HomePageProps> = ({}) => {
       <Products title="Electronics" data={filteredData('Electronics')} />
       <Products title="Clothes" data={filteredData('Clothes')} />
       <Products title="Shoes" data={filteredData('Shoes')} />
+      <Products title="Furniture" data={filteredData('Furniture')} />
+      <Products title="Others" data={filteredData('Others')} />
     </>
   );
 };

@@ -37,7 +37,7 @@ export const Header: FC<HeaderProps> = ({}) => {
       </div>
       <div className={s.headerBottom}>
         {navMenu.map((el) => (
-          <Link to="#">
+          <Link to="#" key={el.id}>
             <span>{el.icon}</span>
             {el.name}
           </Link>
