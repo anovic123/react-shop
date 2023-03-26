@@ -6,7 +6,7 @@ interface FormGroupProps {
   name: string;
   type: string;
   value?: string;
-  onChange?: any;
+  onChange?: () => void;
 }
 
 export const FormGroup: FC<FormGroupProps> = ({ name, type, value, onChange }) => {

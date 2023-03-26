@@ -83,10 +83,11 @@
       margin-top: 10px;
       font-size: 17px;
       .incitingText {
-        font-weight: 600;
-        cursor: pointer;
+        margin-left: 5px;
         color: rgb(34, 166, 255);
         transition: color 0.3s ease 0s;
+        font-weight: 600;
+        cursor: pointer;
         &:hover {
           color: rgb(12, 103, 221);
           text-decoration: underline;

@@ -19,4 +19,5 @@ export interface Category {
 
 export interface IProductsSlice {
   data: IProducts[];
+  isLoading: boolean;
 }
