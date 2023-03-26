@@ -20,6 +20,7 @@ export const Products: FC<ProductsProps> = ({ title, data }) => {
   const settings = {
     speed: 500,
     slidesToShow: 4,
+    loop: false,
   };
   return (
     <section className={s.wrapper}>

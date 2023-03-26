@@ -1,5 +1,6 @@
 import { FC, useEffect } from 'react';
 import { IProducts } from '../../common/types/products';
+import { HomeSlider } from '../../components/home-slider';
 import { Products } from '../../components/products';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getProductsData } from '../../store/thunks/products';
@@ -23,6 +24,7 @@ export const HomePage: FC<HomePageProps> = ({}) => {
 
   return (
     <>
+      <HomeSlider />
       <Products title="Electronics" data={filteredData('Electronics')} />
       <Products title="Clothes" data={filteredData('Clothes')} />
       <Products title="Shoes" data={filteredData('Shoes')} />

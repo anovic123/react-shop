@@ -1,6 +1,6 @@
 .product {
   border: 1px solid rgb(0, 255, 200);
-  max-height: 340px;
+  height: 335px;
   margin-right: 5px;
   border-radius: 5px;
   display: flex;
@@ -21,6 +21,8 @@
     position: relative;
     > img {
       border-radius: 7px;
+      height: 206px;
+      object-fit: cover;
     }
     .productButton {
       display: flex;
@@ -40,8 +42,12 @@
       width: 30px;
       cursor: pointer;
       transition: all 0.3s ease 0s;
+      &:active {
+        background: rgb(179, 176, 176);
+      }
       &:hover {
         background: rgb(241, 240, 240);
+        border: 1px solid orange;
       }
     }
   }

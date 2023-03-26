@@ -1,8 +1,14 @@
 import { GiClothes, GiBallerinaShoes } from 'react-icons/gi';
 import { TbSofa } from 'react-icons/tb';
 import { MdOutlineAutoAwesome, MdOutlineElectricBolt } from 'react-icons/md';
+import { FaBorderAll } from 'react-icons/fa';
 
 export const navMenu = [
+  {
+    name: 'All',
+    icon: <FaBorderAll />,
+    id: 'w34q2',
+  },
   {
     name: 'Clothes',
     icon: <GiClothes />,

@@ -24,10 +24,15 @@
         position: relative;
         .cartCounter {
           position: absolute;
-          bottom: 7px;
+          bottom: 12px;
           font-size: 15px;
           right: -13px;
-          border-radius: 20px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 20px;
+          width: 20px;
           padding: 2px;
           background: #ff891ab3;
         }
@@ -37,7 +42,7 @@
   .headerBottom {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     a {
       display: flex;
       align-items: center;
