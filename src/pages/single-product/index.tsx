@@ -71,6 +71,7 @@ export const SingleProductPage: FC<SingleProductPageProps> = ({}) => {
   };
 
   const { title, price, description, images } = singleData;
+  console.log('🚀 ~ file: index.tsx:74 ~ singleData:', singleData);
 
   const onClickAdd = () => {
     const item = {
@@ -83,10 +84,9 @@ export const SingleProductPage: FC<SingleProductPageProps> = ({}) => {
     dispatch(addItem(item));
   };
 
-
   return (
-    <section className={s.singleProduct}>
-      <div className={s.singleProductWrapper}>
+    <section className={s.single}>
+      <div className={s.singleWrapper}>
         <div className={s.singleSlider}>
           <Slider {...settings} ref={sliderRef}>
             {singleData?.images?.map((el) => (
@@ -108,11 +108,15 @@ export const SingleProductPage: FC<SingleProductPageProps> = ({}) => {
             ))}
           </Slider>
         </div>
-        <div className={s.singleProductDescription}>
-          <h3 className={s.singleProductTitle}>{singleData.title}</h3>
-          <p className={s.singleProductP}>{singleData.description}</p>
-          <span>{singleData.price} $</span>
-          <div className={s.singleProductButtons}>
+        <div className={s.singleDescription}>
+          <h3 className={s.singleTitle}>{singleData.title}</h3>
+          <div className={s.singleCol}>
+            <span className={s.singleColTitle}>Category:</span>{' '}
+            <span className={s.singleColDesc}>{singleData.category.name}</span>
+          </div>
+          <p className={s.singleP}>{singleData.description}</p>
+          <span className={s.singlePrice}>{singleData.price} $</span>
+          <div className={s.singleButtons}>
             <SubmitButton onClick={onClickAdd}>Add to cart</SubmitButton>
           </div>
         </div>
