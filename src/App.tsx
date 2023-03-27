@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import { Layout } from './components/layout';
-import { AuthRoot } from './pages/auth';
-import { CartPage } from './pages/cart';
-import { HomePage } from './pages/home';
-import { SettingsPage } from './pages/settings';
+
+import { AuthRoot, CartPage, FavoritePage, HomePage, SettingsPage } from './pages';
+
 import { PrivateRoute } from './utils/router/privateRoute';
 
 interface AppProps {}
@@ -18,6 +18,7 @@ export const App: FC<AppProps> = ({}) => {
             <Route path="/" element={<HomePage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/favorite" element={<FavoritePage />} />
           </Route>
           <Route path="/login" element={<AuthRoot />} />
           <Route path="/register" element={<AuthRoot />} />

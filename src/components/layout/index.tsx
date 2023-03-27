@@ -16,9 +16,9 @@ export const Layout: FC = () => {
       ) : (
         <>
           <Header />
-          <div className="content">
+          <main className="content">
             <Outlet />
-          </div>
+          </main>
           <Footer />
         </>
       )}

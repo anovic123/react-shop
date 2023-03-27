@@ -13,11 +13,13 @@ import {
 import authSlice from './slice/auth';
 import productsSlice from './slice/products';
 import cartSlice from './slice/cart';
+import favoriteSlice from './slice/favorite';
 
 const rootReducer = combineReducers({
   auth: authSlice,
   products: productsSlice,
-  cart: cartSlice
+  cart: cartSlice,
+  favorite: favoriteSlice
 });
 
 const persistConfig = {

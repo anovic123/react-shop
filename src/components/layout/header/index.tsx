@@ -17,6 +17,7 @@ interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = ({}) => {
   const { cartData } = useAppSelector((state) => state.cart);
+  const { favoriteData } = useAppSelector((state) => state.favorite);
 
   const totalCount = cartData.reduce((sum: number, item: ICartItem) => sum + item.count, 0);
 
@@ -31,13 +32,14 @@ export const Header: FC<HeaderProps> = ({}) => {
 
         <div className={s.info}>
           <User />
-          <Link to="/" className={s.favorites}>
+          <Link to="/favorite" className={s.infoItem}>
             <FcLike />
+            <span className={s.infoItemCounter}>{favoriteData.length}</span>
           </Link>
 
-          <Link to="/cart" className={s.cart}>
+          <Link to="/cart" className={s.infoItem}>
             <AiOutlineShoppingCart />
-            <span className={s.cartCounter}>{totalCount}</span>
+            <span className={s.infoItemCounter}>{totalCount}</span>
           </Link>
         </div>
       </div>

@@ -20,9 +20,13 @@
       .cart {
         font-size: 26px;
       }
-      .cart {
+      .infoItem {
         position: relative;
-        .cartCounter {
+        svg {
+          width: 25px;
+          height: 25px;
+        }
+        .infoItemCounter {
           position: absolute;
           bottom: 12px;
           font-size: 15px;

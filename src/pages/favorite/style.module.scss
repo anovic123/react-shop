@@ -1,0 +1,38 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  column-gap: 5px;
+  row-gap: 10px;
+  margin-bottom: 10px;
+}
+.title {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.clearButton {
+  margin-left: auto;
+  margin-bottom: 20px;
+  display: flex;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #4caf50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f44336;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

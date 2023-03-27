@@ -1,8 +1,10 @@
 import { FC } from 'react';
-import { ICartItem } from '../../common/types/cart';
-import { useAppDispatch } from '../../hooks';
+
 import { addItem, minusItem, removeItem } from '../../store/slice/cart';
-import { calcTotalPrice } from '../../utils/calcTotalPrice';
+
+import { ICartItem } from '../../common/types/cart';
+
+import { useAppDispatch } from '../../hooks';
 
 import s from './style.module.scss';
 
@@ -21,7 +23,7 @@ export const CartItem: FC<CartItemProps> = ({ id, title, price, description, ima
 
   const onClickRemove = () => {
     if (window.confirm('Are you sure you want to remove item?')) {
-      dispatch(removeItem(id));
+      dispatch(removeItem({ id }));
     }
   };
 
