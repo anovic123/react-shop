@@ -19,3 +19,19 @@ export const getProductsData = createAsyncThunk(
     }
   }
 )
+
+export const getSingleProductData = createAsyncThunk(
+  'products/single_product',
+  async(id: any, { rejectWithValue }) => {
+    try {
+      const res = await axios.get(`${BASE_URL}/products/${id}`);
+      return res.data;
+    } catch (error: any) {
+      if (error.response && error.response.data.message) {
+        return rejectWithValue(error.response.data.message);
+      } else {
+        return rejectWithValue(error.message);
+      }
+    }
+  }
+)

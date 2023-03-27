@@ -1,0 +1,43 @@
+.singleProduct {
+  display: flex;
+  gap: 20px;
+  .singleSlider {
+    width: 50%;
+    .singleSliderImg {
+      margin-bottom: 5px;
+      img {
+        border-radius: 10px;
+      }
+    }
+    .sliderNav {
+      .sliderItem {
+        margin-right: 5px;
+      }
+    }
+    .active {
+      border: 5px solid #000;
+    }
+  }
+  .singleProductDescription {
+    margin-top: 20px;
+    .singleProductTitle {
+      font-size: 35px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .singleProductP {
+      margin-bottom: 10px;
+    }
+    span {
+      color: red;
+      font-size: 25px;
+      font-weight: 600;
+    }
+    .singleProductButtons {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

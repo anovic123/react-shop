@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout';
 
 import { AuthRoot, CartPage, FavoritePage, HomePage, SettingsPage } from './pages';
+import { SingleProductPage } from './pages/single-product';
 
 import { PrivateRoute } from './utils/router/privateRoute';
 
@@ -19,6 +20,7 @@ export const App: FC<AppProps> = ({}) => {
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/favorite" element={<FavoritePage />} />
+            <Route path="/products/:id" element={<SingleProductPage />} />
           </Route>
           <Route path="/login" element={<AuthRoot />} />
           <Route path="/register" element={<AuthRoot />} />
