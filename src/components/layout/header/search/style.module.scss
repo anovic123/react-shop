@@ -1,32 +1,86 @@
-.searchForm {
-  display: flex;
-  align-items: center;
+.search {
   position: relative;
-  .searchInput {
-    width: 350px;
-    height: 40px;
-    padding: 5px 15px;
-    font-size: 18px;
-    border: 1px solid #777;
-    border-radius: 5px;
-    color: #000;
-    background: #f8f8fa;
-    transition: all 0.4s ease 0s;
-    &:focus {
-      width: 370px;
-      outline: none;
-      border: 1px solid rgb(12, 235, 97);
-    }
-  }
-  .searchIcon {
+  .searchForm {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 20px;
+    position: relative;
+    .searchInput {
+      width: 350px;
+      height: 40px;
+      padding: 5px 15px;
+      font-size: 18px;
+      border: 1px solid #777;
+      border-radius: 5px;
+      color: #000;
+      background: #f8f8fa;
+      transition: all 0.4s ease 0s;
+      &:focus {
+        width: 370px;
+        outline: none;
+        border: 1px solid rgb(12, 235, 97);
+      }
+    }
+    .searchIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      position: absolute;
+      transform: translateX(-50%);
+      right: 0;
+      color: #000;
+      cursor: pointer;
+    }
+    .searchIconClose {
+      position: absolute;
+      right: 50px;
+      top: 1px;
+      transform: translate(50%, 50%);
+      fill: #000;
+      cursor: pointer;
+    }
+  }
+  .searchList {
     position: absolute;
-    transform: translateX(-50%);
-    right: 0;
-    color: #000;
-    cursor: pointer;
+    top: 50px;
+    background-color: #777;
+    z-index: 2;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    .resultItem {
+      padding: 5px;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      > img {
+        width: 140px;
+        height: 140px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      .resultBody {
+        .resultTitle {
+          > a {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            transition: all 0.3s ease 0s;
+            &:hover {
+              color: red;
+            }
+          }
+        }
+        .resultDescription {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+        .resultPrice {
+          font-size: 18px;
+          color: orange;
+        }
+      }
+    }
   }
 }
