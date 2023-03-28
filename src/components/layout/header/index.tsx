@@ -7,11 +7,11 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Search } from './search';
 import { User } from './user';
 
+import { useAppSelector } from '../../../hooks';
 import { navMenu } from '../../../common/mocks/navigate';
+import { ICartItem } from '../../../common/types/cart';
 
 import s from './style.module.scss';
-import { useAppSelector } from '../../../hooks';
-import { ICartItem } from '../../../common/types/cart';
 
 interface HeaderProps {}
 
@@ -43,14 +43,14 @@ export const Header: FC<HeaderProps> = ({}) => {
           </Link>
         </div>
       </div>
-      <div className={s.headerBottom}>
+      {/* <div className={s.headerBottom}>
         {navMenu.map((el) => (
           <Link to="#" key={el.id}>
             <span>{el.icon}</span>
             {el.name}
           </Link>
         ))}
-      </div>
+      </div> */}
     </header>
   );
 };

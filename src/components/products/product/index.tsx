@@ -7,12 +7,13 @@ import { addFavorite, removeFavorite } from '../../../store/slice/favorite';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 import s from './style.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface ProductProps extends IProducts {}
 
 export const Product: FC<ProductProps> = ({ id, images, title, price, description }) => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const likedProduct = useAppSelector((state) => state.favorite.favoriteData);
 
@@ -51,9 +52,7 @@ export const Product: FC<ProductProps> = ({ id, images, title, price, descriptio
   return (
     <div className={s.product}>
       <div className={s.productTop}>
-        <Link to={`products/${id}`}>
-          <img src={images[0]} alt={title} />
-        </Link>
+        <img src={images[0]} alt={title} onClick={() => navigate(`/products/${id}`)} />
         {isLiked}
         <button className={s.productButton} onClick={onClickAdd}>
           +

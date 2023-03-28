@@ -14,10 +14,16 @@
       color: #000;
       background: #f8f8fa;
       transition: all 0.4s ease 0s;
+      @media (max-width: 420px) {
+        width: 290px;
+      }
       &:focus {
         width: 370px;
         outline: none;
         border: 1px solid rgb(12, 235, 97);
+        @media (max-width: 420px) {
+          width: 300px;
+        }
       }
     }
     .searchIcon {

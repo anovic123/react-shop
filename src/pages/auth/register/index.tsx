@@ -6,7 +6,7 @@ import s from '../style.module.scss';
 export const Register: FC<IAuth> = ({ errors, register, navigate }) => {
   return (
     <>
-      <h1 className={s.title}>Регистрация</h1>{' '}
+      <h1 className={s.title}>Sign up</h1>{' '}
       <div className={s.formGroup}>
         <label htmlFor="email" className={s.label}>
           Email
@@ -16,43 +16,39 @@ export const Register: FC<IAuth> = ({ errors, register, navigate }) => {
       </div>
       <div className={s.formGroup}>
         <label htmlFor="name" className={s.label}>
-          Имя пользователя
+          Username
         </label>
         <input type="text" className={s.input} {...register('name')} />
         {errors && <div className={s.error}>{errors.name?.message}</div>}
       </div>
       <div className={s.formGroup}>
         <label htmlFor="password" className={s.label}>
-          Пароль
+          Password
         </label>
         <input type="password" className={s.input} {...register('password')} />
-        {errors && <div className={s.error}>{errors.name?.password}</div>}
+        {errors && <div className={s.error}>{errors.password?.message}</div>}
       </div>
       <div className={s.formGroup}>
         <label htmlFor="password" className={s.label}>
-          Повторите ваш пароль
+          Repeat your password
         </label>
-        <input
-          type="password"
-          className={s.input}
-          {...register('confirmPassword')}
-        />
-        {errors && <div className={s.error}>{errors.name?.password}</div>}
+        <input type="password" className={s.input} {...register('confirmPassword')} />
+        {errors && <div className={s.error}>{errors.password?.message}</div>}
       </div>
       <div className={s.formGroup}>
         <label htmlFor="avatar" className={s.label}>
-          Аватар
+          Avatar URL
         </label>
         <input type="text" className={s.input} {...register('avatar')} />
-        {errors && <div className={s.error}>{errors.name?.avatar}</div>}
+        {errors && <div className={s.error}>{errors.avatar?.message}</div>}
       </div>
       <button type="submit" className={s.button}>
-        Зарегистрироваться
+        Register
       </button>
       <p className={s.link}>
-        У вас есть аккаунт?
+        You have an account?
         <span className={s.incitingText} onClick={() => navigate('/login')}>
-          Авторизация
+          Sign in
         </span>
       </p>
     </>

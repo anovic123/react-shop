@@ -32,14 +32,18 @@ export const Products: FC<ProductsProps> = ({ title, data }) => {
         breakpoint: 770,
         settings: {
           slidesToShow: 2,
-          centerMode: true,
         },
       },
       {
         breakpoint: 530,
         settings: {
+          slidesToShow: 1.5,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
           slidesToShow: 1,
-          centerMode: true,
         },
       },
     ],

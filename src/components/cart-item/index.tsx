@@ -7,11 +7,13 @@ import { ICartItem } from '../../common/types/cart';
 import { useAppDispatch } from '../../hooks';
 
 import s from './style.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 interface CartItemProps extends ICartItem {}
 
 export const CartItem: FC<CartItemProps> = ({ id, title, price, description, images, count }) => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const onClickPlus = () => {
     dispatch(addItem({ id }));
@@ -33,7 +35,7 @@ export const CartItem: FC<CartItemProps> = ({ id, title, price, description, ima
         <img src={images[0]} alt="Title" />
       </div>
       <div className={s.cartItemInfo}>
-        <h3>{title}</h3>
+        <h3 className={s.cartItemTitle} onClick={() => navigate(`/products/${id}`)}>{title}</h3>
         <p>{description.slice(0, 20)}</p>
       </div>
       <div className={s.cartItemDetail}>

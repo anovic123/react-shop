@@ -6,6 +6,10 @@
     justify-content: space-between;
     column-gap: 5px;
     padding: 20px 0;
+    @media (max-width: 850px) {
+      flex-direction: column;
+      gap: 20px;
+    }
     .logo > a {
       font-size: 30px;
       font-weight: 600;

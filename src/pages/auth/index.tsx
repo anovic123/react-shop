@@ -11,9 +11,9 @@ import { Login } from './login';
 import { Register } from './register';
 import { loginUser, registerUser } from '../../store/thunks/auth';
 
-import s from './style.module.scss';
-import { ILoginData, IRegisterData } from '../../common/types/auth';
 import { AppErrors } from '../../common/errors';
+
+import s from './style.module.scss';
 
 export const AuthRoot: FC = ({}) => {
   const location = useLocation();
@@ -50,8 +50,8 @@ export const AuthRoot: FC = ({}) => {
         } catch (error) {
           return error;
         }
-      } else { 
-        alert('Пароли не совпадают')
+      } else {
+        alert('Password mismatch');
         throw new Error(AppErrors.PasswordDoNotMatch);
       }
     }

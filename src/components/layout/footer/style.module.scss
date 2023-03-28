@@ -1,7 +1,8 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
   .footerLogo {
     font-size: 29px;
     font-weight: 600;

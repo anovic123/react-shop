@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { addItem } from '../../store/slice/cart';
 import { addFavorite } from '../../store/slice/favorite';
 
-import { getProductsData, getSingleProductData } from '../../store/thunks/products';
+import { getSingleProductData } from '../../store/thunks/products';
 
 import s from './style.module.scss';
 

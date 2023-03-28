@@ -3,8 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from './components/layout';
 
-import { AuthRoot, CartPage, FavoritePage, HomePage, SettingsPage } from './pages';
-import { SingleProductPage } from './pages/single-product';
+import {
+  AuthRoot,
+  CartPage,
+  FavoritePage,
+  HomePage,
+  SettingsPage,
+  SingleProductPage,
+} from './pages';
 
 import { PrivateRoute } from './utils/router/privateRoute';
 
