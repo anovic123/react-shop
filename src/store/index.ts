@@ -14,12 +14,14 @@ import authSlice from './slice/auth';
 import productsSlice from './slice/products';
 import cartSlice from './slice/cart';
 import favoriteSlice from './slice/favorite';
+import searchSlice from './slice/search';
 
 const rootReducer = combineReducers({
   auth: authSlice,
   products: productsSlice,
   cart: cartSlice,
-  favorite: favoriteSlice
+  favorite: favoriteSlice,
+  search: searchSlice
 });
 
 const persistConfig = {

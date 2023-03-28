@@ -1,19 +1,43 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC, useCallback, useRef, useState } from 'react';
+import debounce from 'lodash.debounce';
 
 import { BsSearch } from 'react-icons/bs';
 import { GrClose } from 'react-icons/gr';
 
-import { useAppSelector } from '../../../../hooks';
+import { useAppDispatch, useAppSelector } from '../../../../hooks';
 
 import { SearchList } from './search-list';
+
+import { setSearchValue } from '../../../../store/slice/search';
 
 import s from './style.module.scss';
 
 interface SearchProps {}
 
 export const Search: FC<SearchProps> = ({}) => {
+  const dispatch = useAppDispatch();
+
   const [value, setValue] = useState('');
   const searchResult = useAppSelector((state) => state.products.data);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const onClickClear = () => {
+    dispatch(setSearchValue(''));
+    setValue('');
+    inputRef.current?.focus();
+  };
+
+  const updateSearch = useCallback(
+    debounce((str: string) => {
+      dispatch(setSearchValue(str));
+    }, 150),
+    [],
+  );
+
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+    updateSearch(event.target.value);
+  };
 
   return (
     <div className={s.search}>
@@ -23,13 +47,13 @@ export const Search: FC<SearchProps> = ({}) => {
           placeholder="Поиск"
           type="text"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChange}
         />
         <span className={s.searchIcon}>
           <BsSearch />
         </span>
         {value && (
-          <span className={s.searchIconClose} onClick={() => setValue('')}>
+          <span className={s.searchIconClose} onClick={onClickClear}>
             <GrClose />
           </span>
         )}
