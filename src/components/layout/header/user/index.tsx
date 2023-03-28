@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiFillSetting } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 
@@ -10,6 +10,8 @@ import s from './style.module.scss';
 interface UserProps {}
 
 export const User: FC<UserProps> = ({}) => {
+  const navigate = useNavigate();
+
   const [visible, setVisible] = useState<boolean>(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +30,12 @@ export const User: FC<UserProps> = ({}) => {
       document.removeEventListener('mousedown', handleOutsideClick);
     }
   }, [userMenuRef])
-s
+
+  const handleLogout = () => {
+    localStorage.removeItem('persist:root');
+    navigate('/login');
+  }
+
   return (
     <div className={s.user}>
       <div className={s.avatar} style={{ backgroundImage: `url(${user.avatar})` }} />
@@ -45,10 +52,10 @@ s
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <a onClick={() => handleLogout()}>
               <FiLogOut />
               <span>Exit</span>
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
