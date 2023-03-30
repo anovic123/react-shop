@@ -8,6 +8,7 @@ import {
   CartPage,
   FavoritePage,
   HomePage,
+  NotFoundPage,
   SettingsPage,
   SingleProductPage,
 } from './pages';
@@ -27,6 +28,7 @@ export const App: FC<AppProps> = ({}) => {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/favorite" element={<FavoritePage />} />
             <Route path="/products/:id" element={<SingleProductPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
           <Route path="/login" element={<AuthRoot />} />
           <Route path="/register" element={<AuthRoot />} />

@@ -14,7 +14,7 @@ export const SearchList: FC<any> = ({ result, value }) => {
         .filter((el: IProducts) => el.title.toLowerCase().includes(value.toLowerCase()))
         .map((elem: IProducts) => (
           <div className={s.resultItem} key={elem.id}>
-            <img src={elem?.images[0]} alt="" />
+            <img src={elem?.images[0]} alt={elem.title} />
             <div className={s.resultBody}>
               <div className={s.resultTitle}>
                 <Link to={`products/${elem.id}`}>{elem.title}</Link>
