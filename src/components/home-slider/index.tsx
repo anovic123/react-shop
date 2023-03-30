@@ -4,8 +4,9 @@ import Slider from 'react-slick';
 import Shirts from '../../assets/images/home-slider/t-shirts.png';
 import Shoes from '../../assets/images/home-slider/shoes.png';
 
-import s from './style.module.scss';
 import { useMediaQuery } from '../../hooks';
+
+import s from './style.module.scss';
 
 interface HomeSliderProps {}
 

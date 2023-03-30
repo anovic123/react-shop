@@ -1,10 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { IProductsSlice } from '../../../common/types/products';
 import { getProductsData, getSingleProductData } from '../../thunks/products';
 
 const initialState: IProductsSlice = {
   data: [],
-  singleData: [],
+  singleData: {
+    id: 0,
+    title: '',
+    description: '',
+    images: [],
+    creationAt: '',
+    price: 0,
+    updatedAt: '',
+  },
   isLoading: false,
 }
 
@@ -24,7 +33,6 @@ export const productsSlice = createSlice({
       state.data = action.payload;
     })
     builder.addCase(getSingleProductData.pending, (state, action) => {
-      state.singleData = [];
       state.isLoading = true;   
     })
     builder.addCase(getSingleProductData.fulfilled, (state, action) => {

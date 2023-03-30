@@ -1,9 +1,11 @@
 import { FC } from 'react';
 import Slider from 'react-slick';
-import { IProducts } from '../../common/types/products';
-import { useAppSelector } from '../../hooks';
+
 import { Product } from './product';
 import { ProductSkeleton } from './product-skeleton';
+
+import { IProducts } from '../../common/types/products';
+import { useAppSelector } from '../../hooks';
 
 import s from './style.module.scss';
 

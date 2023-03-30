@@ -1,8 +1,12 @@
 import { FC } from 'react';
-import { IProducts } from '../../common/types/products';
+
 import { Product } from '../../components/products/product';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+
 import { clearFavoriteList } from '../../store/slice/favorite';
+
+import { useAppDispatch, useAppSelector } from '../../hooks';
+
+import { IProducts } from '../../common/types/products';
 
 import s from './style.module.scss';
 

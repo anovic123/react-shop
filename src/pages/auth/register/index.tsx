@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { IAuth } from '../../../common/types/auth';
 
 import s from '../style.module.scss';

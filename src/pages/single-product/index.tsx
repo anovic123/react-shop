@@ -1,12 +1,13 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
+
 import { Products } from '../../components/products';
 import { SubmitButton } from '../../components/ui/submit-button';
 
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { addItem } from '../../store/slice/cart';
-import { addFavorite } from '../../store/slice/favorite';
+// import { addFavorite } from '../../store/slice/favorite';
 
 import { getSingleProductData } from '../../store/thunks/products';
 
@@ -71,7 +72,6 @@ export const SingleProductPage: FC<SingleProductPageProps> = ({}) => {
   };
 
   const { title, price, description, images } = singleData;
-  console.log('🚀 ~ file: index.tsx:74 ~ singleData:', singleData);
 
   const onClickAdd = () => {
     const item = {
@@ -112,7 +112,7 @@ export const SingleProductPage: FC<SingleProductPageProps> = ({}) => {
           <h3 className={s.singleTitle}>{singleData.title}</h3>
           <div className={s.singleCol}>
             <span className={s.singleColTitle}>Category:</span>{' '}
-            <span className={s.singleColDesc}>{singleData.category.name}</span>
+            <span className={s.singleColDesc}>{singleData.category?.name}</span>
           </div>
           <p className={s.singleP}>{singleData.description}</p>
           <span className={s.singlePrice}>{singleData.price} $</span>

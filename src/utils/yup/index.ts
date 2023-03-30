@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+
 import { AppErrors } from '../../common/errors';
 
 export const RegisterSchema = yup.object().shape({

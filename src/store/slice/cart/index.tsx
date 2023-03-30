@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ICartSlice } from '../../../common/types/cart';
+
 import { calcTotalPrice } from '../../../utils/calcTotalPrice';
+
+import { ICartSlice } from '../../../common/types/cart';
 
 const initialState: ICartSlice = {
   cartData: [],

@@ -8,7 +8,7 @@ import { Search } from './search';
 import { User } from './user';
 
 import { useAppSelector } from '../../../hooks';
-import { navMenu } from '../../../common/mocks/navigate';
+// import { navMenu } from '../../../common/mocks/navigate';
 import { ICartItem } from '../../../common/types/cart';
 
 import s from './style.module.scss';

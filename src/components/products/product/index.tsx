@@ -1,13 +1,16 @@
 import { FC } from 'react';
-import { IProducts } from '../../../common/types/products';
+import { useNavigate } from 'react-router-dom';
+
 import { useAppDispatch, useAppSelector } from '../../../hooks';
+
 import { addItem } from '../../../store/slice/cart';
 import { addFavorite, removeFavorite } from '../../../store/slice/favorite';
+
+import { IProducts } from '../../../common/types/products';
 
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 import s from './style.module.scss';
-import { Link, useNavigate } from 'react-router-dom';
 
 interface ProductProps extends IProducts {}
 
@@ -50,7 +53,7 @@ export const Product: FC<ProductProps> = ({ id, images, title, price, descriptio
   );
 
   return (
-    <div className={s.product}>
+    <article className={s.product}>
       <div className={s.productTop}>
         <img src={images[0]} alt={title} onClick={() => navigate(`/products/${id}`)} />
         {isLiked}
@@ -63,6 +66,6 @@ export const Product: FC<ProductProps> = ({ id, images, title, price, descriptio
         <p className={s.productDescription}>{description.slice(0, 45)}...</p>
         <span>{price} $</span>
       </div>
-    </div>
+    </article>
   );
 };

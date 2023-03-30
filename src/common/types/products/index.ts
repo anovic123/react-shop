@@ -6,7 +6,7 @@ export interface IProducts {
   images: string[]
   creationAt: string
   updatedAt: string
-  category: Category
+  category?: Category
 }
 
 export interface Category {

@@ -1,6 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+
 import { IProducts } from "../../../common/types/products";
+
 import { BASE_URL } from "../../../utils/constants";
 
 export const getProductsData = createAsyncThunk(

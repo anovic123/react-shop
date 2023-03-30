@@ -17,7 +17,7 @@ export const HomePage: FC<HomePageProps> = ({}) => {
   }, []);
 
   const filteredData = (item: string) => {
-    const filtered = products.filter((product: IProducts) => product.category.name === item);
+    const filtered = products.filter((product: IProducts) => product?.category?.name === item);
 
     return filtered;
   };

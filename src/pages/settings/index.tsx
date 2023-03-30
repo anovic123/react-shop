@@ -1,8 +1,12 @@
 import { ChangeEvent, FC, useEffect, useState } from 'react';
+
 import { FormGroup } from '../../components/ui/form-group';
 import { SubmitButton } from '../../components/ui/submit-button';
+
 import { useAppDispatch, useAppSelector } from '../../hooks';
+
 import { updateUserInfo } from '../../store/thunks/auth';
+
 import s from './style.module.scss';
 
 interface SettingsPageProps {}

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+
 import { IProducts } from '../../../../../common/types/products';
 
 import s from '../style.module.scss';
