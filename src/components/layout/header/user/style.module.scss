@@ -3,14 +3,14 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  .avatar {
+  &Avatar {
     width: 50px;
     height: 50px;
     margin-right: 10px;
     border-radius: 50%;
     background: no-repeat center/cover;
   }
-  .username {
+  &Username {
     font-size: 18px;
     font-weight: 600;
     transition: all 0.3s ease 0s;
@@ -19,7 +19,7 @@
       color: rgb(12, 235, 97);
     }
   }
-  .userMenu {
+  &Menu {
     padding: 20px;
     position: absolute;
     bottom: -140px;
@@ -27,10 +27,10 @@
     background: #272727;
     border-radius: 15px;
     z-index: 10;
-    .userMenuEmail {
+    &Email {
       font-size: 17px;
     }
-    .userMenuList {
+    &List {
       display: flex;
       flex-direction: column;
       row-gap: 7px;

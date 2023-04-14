@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    .searchInput {
+    &Input {
       width: 350px;
       height: 40px;
       padding: 5px 15px;
@@ -26,7 +26,7 @@
         }
       }
     }
-    .searchIcon {
+    &Icon {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -37,7 +37,7 @@
       color: #000;
       cursor: pointer;
     }
-    .searchIconClose {
+    &IconClose {
       position: absolute;
       right: 50px;
       top: 1px;
@@ -46,10 +46,10 @@
       cursor: pointer;
     }
   }
-  .searchList {
+  &List {
     position: absolute;
     top: 50px;
-    background-color: #777;
+    background-color: #3e3e3e;
     z-index: 12;
     width: 100%;
     max-height: 500px;
@@ -66,23 +66,21 @@
         border-radius: 5px;
         object-fit: cover;
       }
-      .resultBody {
-        .resultTitle {
-          > a {
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            transition: all 0.3s ease 0s;
-            &:hover {
-              color: red;
-            }
+      .resultItemBody {
+        .resultItemTitle {
+          font-size: 17px;
+          font-weight: 600;
+          margin-bottom: 5px;
+          transition: all 0.3s ease 0s;
+          &:hover {
+            color: red;
           }
         }
-        .resultDescription {
+        .resultItemDescription {
           font-size: 14px;
           margin-bottom: 5px;
         }
-        .resultPrice {
+        .resultItemPrice {
           font-size: 18px;
           color: orange;
         }

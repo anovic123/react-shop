@@ -15,6 +15,10 @@ interface ProductsProps {
 }
 
 export const Products: FC<ProductsProps> = ({ title, data }) => {
+  if (data.length === 0) {
+    return null;
+  }
+
   const isLoading = useAppSelector((state) => state.products.isLoading);
 
   const skeleton = [...new Array(6)].map((_, index) => <ProductSkeleton key={index} />);
@@ -52,7 +56,7 @@ export const Products: FC<ProductsProps> = ({ title, data }) => {
   };
   return (
     <section className={s.wrapper}>
-      <h2 className={s.title}>{title}</h2>
+      <h2 className={s.wrapperTitle}>{title}</h2>
       <Slider {...settings}>
         {isLoading ? skeleton : data.map((elem) => <Product key={elem.id} {...elem} />)}
       </Slider>

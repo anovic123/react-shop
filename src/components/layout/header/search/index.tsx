@@ -43,17 +43,17 @@ export const Search: FC<SearchProps> = ({}) => {
     <div className={s.search}>
       <form className={s.searchForm}>
         <input
-          className={s.searchInput}
+          className={s.searchFormInput}
           placeholder="Поиск"
           type="text"
           value={value}
           onChange={onChange}
         />
-        <span className={s.searchIcon}>
+        <span className={s.searchFormIcon}>
           <BsSearch />
         </span>
         {value && (
-          <span className={s.searchIconClose} onClick={onClickClear}>
+          <span className={s.searchFormIconClose} onClick={onClickClear}>
             <GrClose />
           </span>
         )}

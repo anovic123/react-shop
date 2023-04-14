@@ -38,8 +38,8 @@ export const CartPage: FC<CartPageProps> = ({}) => {
   return (
     <section className={s.cart}>
       <div className={s.cartTop}>
-        <h2 className={s.cartTitle}>Cart</h2>
-        <button className={s.cartClear} onClick={onClickClear}>
+        <h2 className={s.cartTopTitle}>Cart</h2>
+        <button className={s.cartTopClear} onClick={onClickClear}>
           Clear
         </button>
       </div>

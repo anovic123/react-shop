@@ -22,8 +22,8 @@ export const HomeSlider: FC<HomeSliderProps> = ({}) => {
       {!isTablet && (
         <section className={s.slider}>
           <Slider {...settings}>
-            <img className={s.image} src={Shirts} />
-            <img className={s.image} src={Shoes} />
+            <img className={s.sliderImage} src={Shirts} />
+            <img className={s.sliderImage} src={Shoes} />
           </Slider>
         </section>
       )}

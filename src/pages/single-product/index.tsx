@@ -6,6 +6,7 @@ import { Products } from '../../components/products';
 import { SubmitButton } from '../../components/ui/submit-button';
 
 import { useAppDispatch, useAppSelector } from '../../hooks';
+
 import { addItem } from '../../store/slice/cart';
 // import { addFavorite } from '../../store/slice/favorite';
 
@@ -16,8 +17,9 @@ import s from './style.module.scss';
 interface SingleProductPageProps {}
 
 export const SingleProductPage: FC<SingleProductPageProps> = ({}) => {
-  const { id } = useParams();
   const dispatch = useAppDispatch();
+  
+  const { id } = useParams();
   const sliderRef = useRef<Slider>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 

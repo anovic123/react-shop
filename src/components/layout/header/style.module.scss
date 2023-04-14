@@ -1,6 +1,6 @@
 .header {
   margin-bottom: 30px;
-  .headerTop {
+  &Top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,7 +10,7 @@
       flex-direction: column;
       gap: 20px;
     }
-    .logo > a {
+    &Logo > a {
       font-size: 30px;
       font-weight: 600;
       letter-spacing: 1.5px;
@@ -47,7 +47,7 @@
       }
     }
   }
-  .headerBottom {
+  &Bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;

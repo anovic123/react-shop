@@ -3,11 +3,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
-  .footerLogo {
+  &Logo {
     font-size: 29px;
     font-weight: 600;
   }
-  .footerAuthor {
+  &Author {
     font-size: 21px;
     > a {
       color: rgb(245, 32, 32);

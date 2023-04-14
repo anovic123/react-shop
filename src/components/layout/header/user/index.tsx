@@ -23,24 +23,24 @@ export const User: FC<UserProps> = ({}) => {
       if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
         setVisible(false);
       }
-    }
+    };
 
     document.addEventListener('mousedown', handleOutsideClick);
 
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
-    }
-  }, [userMenuRef])
+    };
+  }, [userMenuRef]);
 
   const handleLogout = () => {
     localStorage.removeItem('persist:root');
     navigate('/login');
-  }
+  };
 
   return (
     <div className={s.user}>
-      <div className={s.avatar} style={{ backgroundImage: `url(${user.avatar})` }} />
-      <div className={s.username} onClick={() => setVisible(!visible)}>
+      <div className={s.userAvatar} style={{ backgroundImage: `url(${user.avatar})` }} />
+      <div className={s.userUsername} onClick={() => setVisible(!visible)}>
         {user.name}
       </div>
       <div className={s.userMenu} ref={userMenuRef} style={{ display: visible ? 'block' : 'none' }}>

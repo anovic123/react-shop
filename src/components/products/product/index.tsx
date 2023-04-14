@@ -47,9 +47,9 @@ export const Product: FC<ProductProps> = ({ id, images, title, price, descriptio
   };
 
   const isLiked = likedProduct.find((obj: IProducts) => obj.id === id) ? (
-    <AiFillHeart className={s.productLike} onClick={onClickRemoveFavorite} />
+    <AiFillHeart className={s.productTopLike} onClick={onClickRemoveFavorite} />
   ) : (
-    <AiOutlineHeart className={s.productLike} onClick={onClickFavorite} />
+    <AiOutlineHeart className={s.productTopLike} onClick={onClickFavorite} />
   );
 
   return (
@@ -57,12 +57,12 @@ export const Product: FC<ProductProps> = ({ id, images, title, price, descriptio
       <div className={s.productTop}>
         <img src={images[0]} alt={title} onClick={() => navigate(`/products/${id}`)} />
         {isLiked}
-        <button className={s.productButton} onClick={onClickAdd}>
+        <button className={s.productTopButton} onClick={onClickAdd}>
           +
         </button>
       </div>
       <div className={s.productBottom}>
-        <h3>{title.slice(0, 21)}...</h3>
+        <h3 onClick={() => navigate(`/products/${id}`)}>{title.slice(0, 21)}...</h3>
         <p className={s.productDescription}>{description.slice(0, 45)}...</p>
         <span>{price} $</span>
       </div>

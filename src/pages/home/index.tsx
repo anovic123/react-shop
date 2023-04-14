@@ -25,10 +25,10 @@ export const HomePage: FC<HomePageProps> = ({}) => {
   return (
     <>
       <HomeSlider />
-      <Products title="Electronics" data={filteredData('Electronics')} />
       <Products title="Clothes" data={filteredData('Clothes')} />
       <Products title="Shoes" data={filteredData('Shoes')} />
       <Products title="Furniture" data={filteredData('Furniture')} />
+      <Products title="Electronics" data={filteredData('Electronics')} />
       <Products title="Others" data={filteredData('Others')} />
     </>
   );

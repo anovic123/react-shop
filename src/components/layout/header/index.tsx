@@ -8,6 +8,7 @@ import { Search } from './search';
 import { User } from './user';
 
 import { useAppSelector } from '../../../hooks';
+
 // import { navMenu } from '../../../common/mocks/navigate';
 import { ICartItem } from '../../../common/types/cart';
 
@@ -24,7 +25,7 @@ export const Header: FC<HeaderProps> = ({}) => {
   return (
     <header className={s.header}>
       <div className={s.headerTop}>
-        <div className={s.logo}>
+        <div className={s.headerTopLogo}>
           <Link to="/">DEMO Shop</Link>
         </div>
 

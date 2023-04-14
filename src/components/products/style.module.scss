@@ -1,8 +1,7 @@
 .wrapper {
   margin-bottom: 30px;
-}
-
-.title {
-  font-size: 30px;
-  margin-bottom: 20px;
+  &Title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
 }
