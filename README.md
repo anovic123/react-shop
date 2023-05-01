@@ -8,7 +8,7 @@
 
 ## Использованные библиотеки и технологии:
 
-React, React Router, Redux Toolkit, Redux Persist, Axios, React Icons, react-loading-skeleton, react-slick, react-hook-form, yup, lodash.debounce
+React, React Router, Redux Toolkit, Redux Persist, Axios, React Icons, react-loading-skeleton, react-slick, react-hook-form, yup, lodash.debounce, react-toastify
 
 ## Как работает проект
 
@@ -16,8 +16,7 @@ React, React Router, Redux Toolkit, Redux Persist, Axios, React Icons, react-loa
 
 После запуска проекта вам необходимо пройти авторизацию или регистрацию вашей учетной записи.
 
-Логин: leji@mailinator.com
-Пароль: Qwerty123
+При регистрации необходимо заполнить поле "Avatar URL" картинкой такого вида: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAWH0u_USZ271ZccMfBo4BbnORqTnPXReU_Q&usqp=CAU
 
 ## Функциональность:
 
