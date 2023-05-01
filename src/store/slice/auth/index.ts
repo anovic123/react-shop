@@ -8,6 +8,7 @@ const initialState: IAuthState = {
   user: {} as IPublicUser,
   isLogged: false,
   isLoading: false,
+  status: [],
 }
 
 export const authSlice = createSlice({
@@ -24,9 +25,10 @@ export const authSlice = createSlice({
       state.isLogged = true;
       state.isLoading = false;
     }),
-    builder.addCase(loginUser.rejected, (state) => {
+    builder.addCase(loginUser.rejected, (state, action) => {
       state.isLogged = false;
       state.isLoading = false;
+      state.status = action.payload;
     }),
     builder.addCase(registerUser.pending, (state) => {
       state.isLoading = true;
@@ -40,6 +42,7 @@ export const authSlice = createSlice({
     builder.addCase(registerUser.rejected, (state, action) => {
       state.isLoading = false;
       state.isLogged = false;
+      state.status = action.payload;
     }),
     builder.addCase(updateUserInfo.fulfilled, (state, action) => {
       state.user = action.payload;

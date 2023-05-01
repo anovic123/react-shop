@@ -13,6 +13,7 @@ export interface IAuthState {
     user: IPublicUser;
     isLogged: boolean;
     isLoading: boolean;
+    status: any;
 }
 
 export interface IPublicUser {
