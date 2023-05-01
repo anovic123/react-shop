@@ -8,7 +8,7 @@
 
 ## Использованные библиотеки и технологии:
 
-React, React Router, Redux Toolkit, Redux Persist, Axios, React Icons, react-loading-skeleton, react-slick, react-hook-form, yup, lodash.debounce
+React, React Router, Redux Toolkit, Redux Persist, Axios, React Icons, react-loading-skeleton, react-slick, react-hook-form, yup, lodash.debounce, react-toastify
 
 ## Как работает проект
 
