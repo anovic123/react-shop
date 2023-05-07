@@ -102,8 +102,8 @@ export const SingleProductPage: FC<SingleProductPageProps> = ({}) => {
             {singleData?.images?.map((el, index) => (
               <div
                 key={el}
-                className={index === activeSlide ? s.active : s.sliderItem} // Добавляем класс "active" к активному элементу
-                onClick={() => sliderRef.current?.slickGoTo(index)} // Переходим к соответствующему слайду по клику
+                className={index === activeSlide ? s.active : s.sliderItem}
+                onClick={() => sliderRef.current?.slickGoTo(index)}
               >
                 <img src={el} alt="#" />
               </div>
@@ -113,7 +113,7 @@ export const SingleProductPage: FC<SingleProductPageProps> = ({}) => {
         <div className={s.singleDescription}>
           <h3 className={s.singleTitle}>{singleData.title}</h3>
           <div className={s.singleCol}>
-            <span className={s.singleColTitle}>Category:</span>{' '}
+            <span className={s.singleColTitle}>Category:</span>
             <span className={s.singleColDesc}>{singleData.category?.name}</span>
           </div>
           <p className={s.singleP}>{singleData.description}</p>

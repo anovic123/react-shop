@@ -4,6 +4,8 @@ import { loginUser, registerUser, updateUserInfo } from "../../thunks/auth";
 
 import { IAuthState, IPublicUser } from "../../../common/types/auth";
 
+import { toast } from 'react-toastify';
+
 const initialState: IAuthState = {
   user: {} as IPublicUser,
   isLogged: false,
@@ -24,11 +26,14 @@ export const authSlice = createSlice({
       state.user = action.payload;
       state.isLogged = true;
       state.isLoading = false;
+      state.status = 'Authorized';
+      toast.success('Successful authorized');
     }),
     builder.addCase(loginUser.rejected, (state, action) => {
       state.isLogged = false;
       state.isLoading = false;
       state.status = action.payload;
+      toast.error(action.payload as string)
     }),
     builder.addCase(registerUser.pending, (state) => {
       state.isLoading = true;
@@ -38,14 +43,20 @@ export const authSlice = createSlice({
       state.user = action.payload;
       state.isLoading = false;
       state.isLogged = true;
+      state.status = 'Authorized';
+      toast.success('Successful registered');
     }),
     builder.addCase(registerUser.rejected, (state, action) => {
       state.isLoading = false;
       state.isLogged = false;
       state.status = action.payload;
+      state.status.map((status: string) => (
+        toast.error(status as string)
+      ))
     }),
     builder.addCase(updateUserInfo.fulfilled, (state, action) => {
       state.user = action.payload;
+      toast.success('Successfully updated user info')
     })
   }
 })

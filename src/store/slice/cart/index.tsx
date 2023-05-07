@@ -4,6 +4,8 @@ import { calcTotalPrice } from '../../../utils/calcTotalPrice';
 
 import { ICartSlice } from '../../../common/types/cart';
 
+import { toast } from 'react-toastify';
+
 const initialState: ICartSlice = {
   cartData: [],
   totalPrice: 0,
@@ -27,6 +29,7 @@ const cartSlice = createSlice({
       }
 
       state.totalPrice = calcTotalPrice(state.cartData);
+      toast.success('Successfully added to cart');
     },
     minusItem(state, action) {
       const findItem = state.cartData.find((obj) => obj.id === action.payload.id);
@@ -40,11 +43,13 @@ const cartSlice = createSlice({
     removeItem(state, action) {
       state.cartData = state.cartData.filter((obj) => obj.id !== action.payload.id);
       state.totalPrice = calcTotalPrice(state.cartData);
+      toast.success('Product removed successfully');
     },
     clearItems(state) {
       state.cartData = [];
       state.totalPrice = 0;
       state.count = 0;
+      toast.success('Cart was successfully emptied');
     },
   },
 });

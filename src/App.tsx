@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 import { Layout } from './components/layout';
 
@@ -14,6 +15,8 @@ import {
 } from './pages';
 
 import { PrivateRoute } from './utils/router/privateRoute';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 interface AppProps {}
 
@@ -34,6 +37,17 @@ export const App: FC<AppProps> = ({}) => {
           <Route path="/register" element={<AuthRoot />} />
         </Route>
       </Routes>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

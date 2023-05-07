@@ -33,8 +33,10 @@ export const User: FC<UserProps> = ({}) => {
   }, [userMenuRef]);
 
   const handleLogout = () => {
-    localStorage.removeItem('persist:root');
-    navigate('/login');
+    if (window.confirm('Do you really want to leave?')) {
+      localStorage.removeItem('persist:root');
+      navigate('/login');
+    }
   };
 
   return (
