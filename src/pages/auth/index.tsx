@@ -23,8 +23,9 @@ export const AuthRoot: FC = ({}) => {
   const navigate = useNavigate();
 
   const { status } = useAppSelector((state) => state.auth);
-
-  console.log(status);
+  if (status == 'Authorized') {
+    navigate('/');
+  }
 
   const {
     register,
@@ -38,9 +39,6 @@ export const AuthRoot: FC = ({}) => {
     if (location.pathname === '/login') {
       try {
         await dispatch(loginUser(data));
-        if (status == 'Authorized') {
-          navigate('/');
-        }
       } catch (error) {
         return error;
       }
@@ -54,9 +52,6 @@ export const AuthRoot: FC = ({}) => {
         };
         try {
           await dispatch(registerUser(userData));
-          if (status == 'Authorized') {
-            navigate('/login');
-          }
         } catch (error) {
           return error;
         }
