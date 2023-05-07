@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { useAppDispatch } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks';
 
 import { LoginSchema, RegisterSchema } from '../../utils/yup';
 
@@ -22,6 +22,10 @@ export const AuthRoot: FC = ({}) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  const { status } = useAppSelector((state) => state.auth);
+
+  console.log(status);
+
   const {
     register,
     formState: { errors },
@@ -34,7 +38,9 @@ export const AuthRoot: FC = ({}) => {
     if (location.pathname === '/login') {
       try {
         await dispatch(loginUser(data));
-        navigate('/');
+        if (status == 'Authorized') {
+          navigate('/');
+        }
       } catch (error) {
         return error;
       }
@@ -48,7 +54,9 @@ export const AuthRoot: FC = ({}) => {
         };
         try {
           await dispatch(registerUser(userData));
-          navigate('/login');
+          if (status == 'Authorized') {
+            navigate('/login');
+          }
         } catch (error) {
           return error;
         }

@@ -10,7 +10,9 @@ const initialState: IAuthState = {
   user: {} as IPublicUser,
   isLogged: false,
   isLoading: false,
-  status: [],
+  status: [
+    'Unauthorized'
+  ],
 }
 
 export const authSlice = createSlice({
